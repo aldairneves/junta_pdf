@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Juntar PDF</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+
+<body>
+
+    <div id="successAlert">PDFs juntados com sucesso! ✔️</div>
+    <div id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Importar PDFs</h2>
+            <div id="dropArea">Clique ou arraste PDFs</div>
+            <input type="file" id="pdfInput" accept="application/pdf" multiple hidden>
+            <label for="outputName" class="label-outputName">Nome do arquivo final</label>
+            <input type="text" id="outputName" value="bcano0512">
+            <div id="progressContainer">
+                <div id="progressBar"></div>
+            </div>
+            <button id="mergeBtn" class="button">Juntar PDFs</button>
+            <button id="clearBtn" class="button">Limpar Tudo</button>
+        </div>
+
+        <div class="main">
+            <h1>Arquivos Carregados</h1>
+            <div id="fileList"></div>
+        </div>
+    </div>
+
+    <div id="modal" onclick="closeModal()">
+        <embed id="modalPdf" type="application/pdf">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
